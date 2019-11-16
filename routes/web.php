@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,27 +9,22 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 Route::get('/testing',function(){
     echo "This is testing";
 });
-
 Route::view('welcome','welcome');
-
 Route::get('/view', 'WelcomeController@view');
-
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 // This is blog management
-
-Route::get('/blogs','BlogController@index')->name('blog:index');
+Route::get('blogs','BlogController@index')->name('blog:index');
 Route::get('/blogs/create','BlogController@create')->name('blog:create');
 Route::post('/blogs/create','BlogController@store')->name('blog:store');
+Route::get('blogs/show/{blog}','BlogController@show')->name('blog:show');
+Route::get('blogs/edit/{blog}','BlogController@edit')->name('blog:edit');
+Route::post('blogs/edit/{blog}','BlogController@update')->name('blog:update');
 
-
+Route::get('blogs/delete/{blog}','BlogController@padam')->name('blog:padam');
