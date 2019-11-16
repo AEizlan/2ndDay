@@ -11,10 +11,10 @@
                     </div>
                 @endif
                 <div class="card-header">Blog Index</div>
-
+                <a href="{{ route('blog:create') }}" class="btn btn-primary">Create</a>
                 <div class="card-body">
-                    Display all the blog here
-
+                
+                    Display all the blog here    
                     <table class="table">
                             <thead>
                                 <tr>
